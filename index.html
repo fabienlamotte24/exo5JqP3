@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="assets/jq/jquery-3.2.1.js"></script>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <title>Exercice 5</title>
+  </head>
+  <body>
+    <input type="text" name="direction" id="direction" />
+    <div class="carre"></div>
+  </body>
+  <script>
+    var marginTop = ;
+    var marginLeft = ;
+    $('#direction').keydown(function(event){
+      if ( event.which == 39){//bouge à droite
+          marginLeft += 10;
+          $('.carre').css('margin-left', marginLeft + 'px');
+          if (marginLeft > 1260){
+            marginLeft = -10;
+          };
+      } else if (event.which == 40) {//bouge en bas
+          marginTop += 10;
+          $('.carre').css('margin-top', marginTop + 'px');
+          if (marginTop > 560){
+            marginTop = -40;
+          }
+      } else if (event.which == 37) {//bouge à gauche
+          marginLeft -=10;
+          $('.carre').css('margin-left', marginLeft + 'px');
+          if (marginLeft < 0){
+            marginLeft = 1280;
+          }
+      } else if (event.which == 38) {//bouge en haut
+          marginTop -=10;
+          $('.carre').css('margin-top', marginTop + 'px');
+          if (marginTop < -20){
+            marginTop = 580;
+          }
+      }
+  });
+  </script>
+</html>
